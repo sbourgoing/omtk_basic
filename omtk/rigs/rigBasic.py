@@ -4,9 +4,19 @@ from omtk.core import className
 
 class BasicNomenclature(className.BaseName):
 
-    root_jnt_name = 'root_jnt'
+    root_jnt_name = 'root'
     type_anm = 'ctrl'
-    type_anm_grp = 'ctrl_grp'
+    type_jnt = None
+    type_rig = None
+    # TODO: fix collision when anm_grp and rig_grp are created with the same nomenclature (they are at the same level)
+    type_anm_grp = 'cgrp'
+    type_rig_grp = 'rgrp'
+
+    root_anm_name = 'main_ctrl'  # todo: eventually rename to Main_Ctrl
+    root_anm_master_name = 'master_ctrl'
+
+    root_geo_name = 'mesh'
+    root_rig_name = 'data'
 
     def __init__(self, *args, **kwargs):
         super(BasicNomenclature, self).__init__(*args, **kwargs)
